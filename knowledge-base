@@ -1,0 +1,466 @@
+BASH - new commands 
+
+pwdx - print process working directory
+	pwdx 3315
+	3511: /home/cvetomir
+
+lsof -i - print open files and processes that use them 
+	lsof -i 
+	lsof -i :3315 - print ports and processes that use them 
+
+
+netstat - a tool used to get information about the network state
+	netstat -tulnp - lists open network ports and the processes
+			that own them
+
+route - show / manipulate the IP routing table
+	route -n
+	/proc/net/route
+
+iostat - display statistics about the hard disk devices
+       
+	iostat -dmx
+
+readlink - readlink - print value of a symbolic link or canonical file name
+
+service - run a SystemV init script
+
+tasksel - a user interface for installing tasks 
+
+egrep - grep with extended regular expressions support
+
+xargs - allows using the output of one command as arguments to another
+
+id [username] - displays UID, GID, groups
+
+modprobe - add and remove modules from the Linux kernel 
+
+usermod - modify a user account
+
+/etc/network/interface - this file describes the network interfaces on your system
+
+/etc/services - this file describes the default ports for various protocols and services
+
+/etc/hosts
+	/etc/init.d/network(ing) restart - it is recommended after editting the hosts file
+xargs - used to manage arguments between commands 
+
+pgrep - look up process id based on name
+
+      pgrep -l $process-name - lists process names and ids starting with $process-name
+
+fg - kills stopped processes
+
+TO DO: 
+
+# use xargs with pgrep at the end 
+ps auxfwww | awk '{print $4" "$2}' | sort -n | tail -n 1 | awk '{print $2}' | xargs pgrep
+
+hdparm - get/set SATA/IDE device parameters
+
+sed - stream editor
+	
+	http://www.theunixschool.com/2012/06/sed-25-examples-to-delete-line-or.html
+
+fsck - check and repair a Linux filesystem
+
+dig - DNS lookup utility
+	http://alvinalexander.com/linux-unix/dig-commands-examples-tcp-ip-mx-record-dns
+	http://www.debianhelp.co.uk/dnsrecords.htm
+	http://www.madboa.com/geek/dig/
+
+lsof - list opened files on the system
+
+stat - display file or filesystem status
+
+apxs - APache Extensions Tool
+
+htpasswd - can create a .htpasswd dotfile that contains a userid and an encrypted password 
+
+	htpasswd -c /var/www/.htpasswd username 
+
+pstree - displays the processes with their belonging child processes and the parent process they are
+	spawned from
+
+ifconfig - configure a network interface
+
+	without arguements - lists enabled interfaces
+	
+	ifconfig -a 
+		lists all interfaces, even those disabled
+
+iwconfig - configure a wireless network interface
+
+iwlist - get more detailed wireless information for a wireless interface
+
+dhcpcd - a wrapper for the DHCP client daemon
+
+scp - secure copy - copy files to a remote server
+
+httpd
+	httpd -S - shows the status of the Apache configuration file (httpd.conf on default CentOS 
+	installation) and if there's incorrect syntax
+
+sftp - SSH over FTP
+
+	http://www.tecmint.com/sftp-command-examples/
+	sftp -oPort=2222 user@123.456.789.012:/home/something
+	https://kb.iu.edu/d/akqg
+
+xclip - command line interface to X selections (clipboard)
+
+Wireless configuration on a laptop with Linux: 
+	http://svobodnaplaneta.com/story/4025
+
+=======================================================================================================
+
+htaccess
+
+http://www.javascriptkit.com/howto/htaccess11.shtml
+
+Htaccess cheatsheet:
+http://www.thejackol.com/htaccess-cheatsheet/
+
+htpasswd - we can create a password protected website with this configuration file  
+
+=======================================================================================================
+
+We shouldn't foreward the client to cPanel. Instead we should add a link to the WebHostFace Knowledge
+Base. 
+
+=======================================================================================================
+
+PHP - New functions 
+
+passthru();
+fpassthru();
+join(); 
+implode(); #implode and join are aliases
+http_build_query();
+urlencode();
+htmlentities();
+rawurlencode();
+sprintf();
+filetype();
+json_decode();
+
+opendir();
+readdir();
+closedir();
+
+array_key_exists();
+
+NB!!! Responses from and requests to the serven can have headers, urls don't have headers!
+
+curl_init();
+curl_setopt();
+curl_exec();
+curl_close();
+
+mime_content_type(); #deprecated
+
+finfo_open();
+finfo_file();
+finfo_set_flags();
+finfo_buffer();
+finfo_close();
+
+tempnam(); 	# not tempname! 
+copy(); 	# similar to cp in UNIX
+rename();	# similar to mv for file renaming
+unlink();	# similar to rm in UNIX
+mkdir();
+rmdir();	# same as in UNIX - the directory shoud be empty
+
+fopen();
+fread();
+fwrite();
+ftell();
+fflush();
+flock();
+
+fclose();
+
+getcwd();
+count_chars();
+chr();
+idn();
+
+strrchr();
+exif_imagetype();
+
+ob_start();
+ob_flush();
+ob_get_contents();
+ob_end_clean();
+ob_end_flush();
+
+imagejpeg();
+imagecreatetruecolor();
+confirm_logged_in();
+
+headers_sent();
+
+error_log();
+preg_match();
+
+PCRE - Perl compatible regular expressions
+PECL - PHP extension community library
+libxml2 - PHP xml extensions library
+
+PHP Handlers:
+http://chriswiegman.com/2011/10/fastcgi-vs-suphp-vs-cgi-vs-mod_php-dso/
+
+Differences:
+	*mod_php (DSO) - Runs PHP as part of Apache. PHP is run directly in the same process as the 
+		       	 Apache server. all work on files will be done as the Apache user which therefore
+			 must have permissions to all of your files. The Apache user must have 
+			 permissions on your files. Often the files on your site are owned by users
+			 other than your apache user, therefore it will be hard for other users to
+			 upload files.
+
+	*CGI 		- PHP is run as a separate cgi process, in a program outside the apache process
+			  Requires more CPU time than mod_php. 
+
+	*suPHP		- Runs PHP outside of the Apache process as the user who owns the files. 
+
+	*FastCGI
+
+	*suexec
+
+Best PHP Security practises:
+http://www.cyberciti.biz/tips/php-security-best-practices-tutorial.html
+
+=======================================================================================================
+
+VIM - http://silencemakesmefree.blogspot.com/2014/05/humble-vim-tutorial.html
+
+mapping:
+http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_%28Part_1%29
+
+Appending at the beginning is called prepending
+:2,17s/^/#/ - add a character at the beginning of a sequence of lines
+
+Ctrl+z - stops Vim 
+
+=======================================================================================================
+
+PORTS - most used and default ports
+
+ftp-data	20/tcp
+ftp		21/tcp
+ssh		22/tcp				# SSH Remote Login Protocol
+ssh		22/udp
+smtp            25/tcp          mail
+tftp		69/udp
+http		80/tcp		www		# WorldWideWeb HTTP
+http		80/udp				# HyperText Transfer Protocol
+pop3		110/tcp		pop-3		# POP version 3
+pop3		110/udp		pop-3
+sftp		115/tcp				# Secure shell over File Transfer Protocol
+imap2		143/tcp		imap		# Interim Mail Access P 2 and 4
+imap2		143/udp		imap
+imap3		220/tcp				# Interactive Mail Access
+imap3		220/udp				# Protocol v3
+https		443/tcp				# http protocol over TLS/SSL
+https		443/udp
+ssmtp           465/tcp         smtps           # SMTP over SSL
+ftps-data	989/tcp				# FTP over SSL (data)
+ftps		990/tcp
+imaps		993/tcp				# IMAP over SSL
+imaps		993/udp
+pop3s		995/tcp				# POP-3 over SSL
+pop3s		995/udp
+http-alt	8080/tcp	webcache	# WWW caching service
+http-alt	8080/udp
+
+=======================================================================================================
+
+HTTP
+
+TO DO:
+HTTP Header fields: http://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+
+Referer - includes the location that linked to the current request. 
+User-Agent - describes the client (web browser) from which the request was sent.
+
+HTTP Status codes: http://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+=======================================================================================================
+
+Networking terms:
+
+http://compnetworking.about.com/od/networkingtermsa/
+
+=======================================================================================================
+
+Apache Web Server
+
+MPM - Multi-processing Module - defines how the server handles requests by setting the relationship
+between threads and child processes
+
+Apache on different OSs - http://wiki.apache.org/httpd/DistrosDefaultLayout It includes different 
+directories and configuration files locations
+Apache 2.0 directories - bin, build, cgi-bin, conf, error, htdocs, icons, include, lib, logs, man
+manual, modules
+
+ApacheToolbox: a shell script which assists on the configuration and installation of Apache
+http://apachetoolbox.com/
+
+http://apache-server.com/tutorials/
+
+Virtual hosts for Dummies:
+http://www.tecmint.com/apache-ip-based-and-name-based-virtual-hosting/
+http://httpd.apache.org/docs/current/vhosts/examples.html
+
+Apache Portable Runtime
+
+http://httpd.apache.org/docs/2.0/install.html
+
+apxs - Apache Extension Tool
+
+http://modules.apache.org/
+
+http://linux-training.be/files/books/LinuxSrv.pdf
+	page 23 - basic VirtualHost configuration
+
+LogFormat
+
+Any file that has the handler cgi-script will be treated as a CGI script, and run by the server,
+ with its output being returned
+to the client. Files acquire this handler either by having a name containing an extension
+defined by the AddHandler directive, or by being in a ScriptAlias directory.
+
+
+ErrorLog - when assigned to a VirtualHost, the errors returned from it will be stored in a separate
+	   text file, rather than the default global error log.
+
+some notable Apache modules:
+
+*mod_security 
+	-Apache auditing tool. Web Application Firewal. 
+	 Works on a per request basis. Has no way to compare one request to another 
+	to build a multiple request profile. 
+
+*mod_dumpio
+	- allows the complete input and output of each HTTP transaction to be logged
+
+*mod_log_config
+	- Apache Web servers standart activity logging module. Allows the admin to create his
+	own formats for structuring the logs.
+
+	LogLevel directive - the default LogLevel is warn
+
+	CustomLog - we can use this directive to assign the format of the logged request. We can
+	assign the usage of the rotatelogs program which rotates the logs at a particular time
+	automatically.
+
+*mod_logio - enhances mod_log_config. Allows to log the number of bytes transferred over the web
+
+*mod_log_mysql - allows activity logging to be done into a MySQL database
+
+*mod_vhost_alias - allows mass virtual hosting - configuring multiple virtual hosts with similar 
+	settings
+
+Apache::BruteWatch - watches the logfile and sends a notification when an account is being
+	targetet for a brute force attack. It requires mod_perl to work. 
+
+SetEnvIfNoCase - we can use this directive to turn off logging of requests. For example to prevent 
+		logging of those requests from our own pages. This is useful for keeping logfile
+		size for example. Same as SetEnvIf, but Case insensitive
+
+Best PHP Security practises:
+http://www.cyberciti.biz/tips/php-security-best-practices-tutorial.html
+
+=======================================================================================================
+
+SSH 
+
+MySQL dump through SSH and Cronjobs:
+http://nau4i.me/forum/index.php?topic=14982.0
+
+=======================================================================================================
+C programming 
+
+opendir (); 
+	The  opendir() function opens a directory stream corresponding to the directory name, and returns a pointer to the directory stream.
+	 The stream is positioned at the first entry at the directory
+       the first entry in the directory.
+	#include <sys/types.h>
+	#include <dirent.h>
+
+=======================================================================================================
+SQL 
+
+TO DO:
+http://en.wikipedia.org/wiki/Category:Database_management_systems
+
+
+=======================================================================================================
+
+CMSs
+
+--WORDPRESS
+
+10 most common Wordpress errors:
+http://www.hongkiat.com/blog/common-wordpress-errors-with-solutions/
+http://svobodnaplaneta.com/story/4215
+
+Akismet plugin API key:
+c7a3ed55e7a5
+
+--Magento 
+
+maintenance.flag file
+ 
+prefix_admin_user - we can reset the user password here. It is encrypted with MD5. 
+
+~/public_html/magento_installation/etc/app/local.xml - here we can find the used MySQL database,
+the username for it and his password
+
+http://kb.webhostface.com/shopping-cart/magento-faq/magento-database-log-cleaning
+
+Cleaning Magento Logs using SSH is possible and quite simple if you have SSH access to your website.
+
+    Log into to your account using SSH.
+    In your public_html/shell folder there is a file called log.php
+    Run the following command "php -f shell/log.php clean"
+
+--Pimcore 
+
+=======================================================================================================
+
+Git and GitHub:
+
+Permission denied (public key) issue while accessing with SSH:
+https://help.github.com/articles/error-permission-denied-publickey
+
+Squashing commits with rebase:
+http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html
+
+=======================================================================================================
+Other useful links, terms and acronims:
+
+http://rosettacode.org/wiki/Rosetta_Code
+http://en.wikipedia.org/wiki/Comma-separated_values - CSV - similar to XML and JSON files. Stores 
+	tabular data (numbers and text) in plain-text format. 
+
+SSH security practises - http://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html
+
+NTP - Network Time Protocol
+NNTP - Network News Transfer Protocol
+SNMP - Simple Network Management Tool 
+PCRE - Perl compatible regular expressions
+PECL - PHP extension community library
+libxml2 - PHP xml extensions library
+PPP - Point to Point Protocol
+VoIP - Voice over IP
+
+The DOM Tree:
+http://guistuff.com/css/css_doctree.html
+
+PHP Handlers:
+http://chriswiegman.com/2011/10/fastcgi-vs-suphp-vs-cgi-vs-mod_php-dso/
+
+FTP client with remote apps support: 
+http://www.pablosoftwaresolutions.com/html/ftp_wanderer_3_0.html - FTP Wanderer
