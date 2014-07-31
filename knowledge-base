@@ -5,8 +5,8 @@ pwdx - print process working directory
 	3511: /home/cvetomir
 
 lsof -i - print open files and processes that use them 
-	lsof -i 
-	lsof -i :3315 - print ports and processes that use them 
+	lsof -i - print ports and processes that use them 
+	lsof -i :3315 
 
 
 netstat - a tool used to get information about the network state
@@ -162,6 +162,10 @@ curl_setopt();
 curl_exec();
 curl_close();
 
+gethostbyaddr();
+gethostbyname();
+gethostbynamel(); # returns an array with all the IPs to which the domain name is pointed
+
 mime_content_type(); #deprecated
 
 finfo_open();
@@ -193,6 +197,8 @@ getcwd();
 count_chars();
 chr();
 idn();
+
+eval();
 
 strrchr();
 exif_imagetype();
@@ -475,3 +481,6 @@ http://chriswiegman.com/2011/10/fastcgi-vs-suphp-vs-cgi-vs-mod_php-dso/
 
 FTP client with remote apps support: 
 http://www.pablosoftwaresolutions.com/html/ftp_wanderer_3_0.html - FTP Wanderer
+
+How to set an FTP server (vsftpd):
+https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-on-centos-6--2
