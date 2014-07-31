@@ -112,6 +112,11 @@ xclip - command line interface to X selections (clipboard)
 Wireless configuration on a laptop with Linux: 
 	http://svobodnaplaneta.com/story/4025
 
+tar - the UNIX archiver
+	tar -cvzf name.tgz subdir - create tarball
+
+rev - reverse line of a file or files
+
 =======================================================================================================
 
 htaccess
@@ -170,7 +175,7 @@ copy(); 	# similar to cp in UNIX
 rename();	# similar to mv for file renaming
 unlink();	# similar to rm in UNIX
 mkdir();
-rmdir();	# same as in UNIX - the directory shoud be empty
+rmdir();	# same as in UNIX - the directory should be empty
 
 fopen();
 fread();
@@ -178,7 +183,10 @@ fwrite();
 ftell();
 fflush();
 flock();
-
+fgets();
+fputs();
+feof();
+fsockopen();
 fclose();
 
 getcwd();
@@ -383,11 +391,15 @@ http://nau4i.me/forum/index.php?topic=14982.0
 C programming 
 
 opendir (); 
-	The  opendir() function opens a directory stream corresponding to the directory name, and returns a pointer to the directory stream.
+	The  opendir() function opens a directory stream corresponding to the directory name,
+	 and returns a pointer to the directory stream.
 	 The stream is positioned at the first entry at the directory
        the first entry in the directory.
 	#include <sys/types.h>
 	#include <dirent.h>
+
+Beej's Guide to UNIX IPC:
+http://beej.us/guide/bgipc/output/html/multipage/index.html
 
 =======================================================================================================
 SQL 
