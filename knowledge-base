@@ -13,6 +13,8 @@ netstat - a tool used to get information about the network state
 	netstat -tulnp - lists open network ports and the processes
 			that own them
 
+chkconfig -  it is  used  to  manipulate the runlevel links at boot time
+
 route - show / manipulate the IP routing table
 	route -n
 	/proc/net/route
@@ -43,6 +45,7 @@ usermod - modify a user account
 
 /etc/hosts
 	/etc/init.d/network(ing) restart - it is recommended after editting the hosts file
+
 xargs - used to manage arguments between commands 
 
 pgrep - look up process id based on name
@@ -101,6 +104,10 @@ httpd
 	httpd -S - shows the status of the Apache configuration file (httpd.conf on default CentOS 
 	installation) and if there's incorrect syntax
 
+rpm - RedHat Package Manager
+
+	rpm -qc - displays the configuration files of an installed software
+
 sftp - SSH over FTP
 
 	http://www.tecmint.com/sftp-command-examples/
@@ -109,8 +116,6 @@ sftp - SSH over FTP
 
 xclip - command line interface to X selections (clipboard)
 
-Wireless configuration on a laptop with Linux: 
-	http://svobodnaplaneta.com/story/4025
 
 tar - the UNIX archiver
 	tar -cvzf name.tgz subdir - create tarball
@@ -484,3 +489,6 @@ http://www.pablosoftwaresolutions.com/html/ftp_wanderer_3_0.html - FTP Wanderer
 
 How to set an FTP server (vsftpd):
 https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-on-centos-6--2
+
+Wireless configuration on a laptop with Linux: 
+	http://svobodnaplaneta.com/story/4025
