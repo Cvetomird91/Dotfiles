@@ -205,7 +205,6 @@ ob_end_flush();
 
 imagejpeg();
 imagecreatetruecolor();
-confirm_logged_in();
 
 headers_sent();
 
