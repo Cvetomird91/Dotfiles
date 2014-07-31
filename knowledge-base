@@ -469,6 +469,9 @@ http://en.wikipedia.org/wiki/Comma-separated_values - CSV - similar to XML and J
 
 SSH security practises - http://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html
 
+Difference between RSA and DSA encryption algorythms:
+http://security.stackexchange.com/questions/5096/rsa-vs-dsa-for-ssh-authentication-keys
+
 NTP - Network Time Protocol
 NNTP - Network News Transfer Protocol
 SNMP - Simple Network Management Tool 
