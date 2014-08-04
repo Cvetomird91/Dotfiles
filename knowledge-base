@@ -4,11 +4,11 @@ pwdx - print process working directory
 	pwdx 3315
 	3511: /home/cvetomir
 
-lsof -i - print open files and processes that use them 
-	lsof -i - print ports and processes that use them 
-	lsof -i :3315 
+lsof -i - a utility that displays information about open file descriptors
+	- print open files and processes that use them 
 
-
+	lsof -i 
+	lsof -i :3315 - print ports and processes that use them 
 netstat - a tool used to get information about the network state
 	netstat -tulnp - lists open network ports and the processes
 			that own them
@@ -23,7 +23,7 @@ iostat - display statistics about the hard disk devices
        
 	iostat -dmx
 
-readlink - readlink - print value of a symbolic link or canonical file name
+readlink - print value of a symbolic link or canonical file name
 
 service - run a SystemV init script
 
@@ -72,8 +72,6 @@ dig - DNS lookup utility
 	http://www.debianhelp.co.uk/dnsrecords.htm
 	http://www.madboa.com/geek/dig/
 
-lsof - list opened files on the system
-
 stat - display file or filesystem status
 
 apxs - APache Extensions Tool
@@ -121,6 +119,8 @@ tar - the UNIX archiver
 	tar -cvzf name.tgz subdir - create tarball
 
 rev - reverse line of a file or files
+Wireless configuration on a laptop with Linux: 
+	http://svobodnaplaneta.com/story/4025
 
 =======================================================================================================
 
@@ -159,6 +159,11 @@ readdir();
 closedir();
 
 array_key_exists();
+array_combine();
+array_fill();
+array_count_values();
+
+processing();
 
 NB!!! Responses from and requests to the serven can have headers, urls don't have headers!
 
@@ -216,11 +221,12 @@ ob_end_flush();
 
 imagejpeg();
 imagecreatetruecolor();
-
+confirm_logged_in();
 headers_sent();
 
 error_log();
 preg_match();
+preg_split();
 
 PCRE - Perl compatible regular expressions
 PECL - PHP extension community library
@@ -248,6 +254,15 @@ Differences:
 
 Best PHP Security practises:
 http://www.cyberciti.biz/tips/php-security-best-practices-tutorial.html
+
+Sessions in PHP:
+http://www.phpro.org/tutorials/Introduction-To-PHP-Sessions.html
+
+Image processing and GD with PHP:
+http://php.net/image
+
+Image Processing with Image Magick:
+http://php.net/imagick
 
 =======================================================================================================
 
@@ -448,8 +463,22 @@ Cleaning Magento Logs using SSH is possible and quite simple if you have SSH acc
     In your public_html/shell folder there is a file called log.php
     Run the following command "php -f shell/log.php clean"
 
+Magento Cron jobs should be adjusted when installing a Magento installation to a period of about 
+3~4 hours.
+
 --Pimcore 
 
+--PrestaShop
+
+.tpl файловете от PrestaShop темите отварят и затварят коментарите си с {* и *} . Toва са всъщност
+Smarty шаблони.
+
+presta/config/settings.inc.php - тук се въвежда базата данни
+~/public_html/presta_shop/error_log
+
+--OpenClassifieds
+
+Трябва да се изтрие директорията install/ след инсталация
 =======================================================================================================
 
 Git and GitHub:
@@ -474,7 +503,7 @@ http://security.stackexchange.com/questions/5096/rsa-vs-dsa-for-ssh-authenticati
 
 NTP - Network Time Protocol
 NNTP - Network News Transfer Protocol
-SNMP - Simple Network Management Tool 
+SNMP - Simple Network Management Protocol
 PCRE - Perl compatible regular expressions
 PECL - PHP extension community library
 libxml2 - PHP xml extensions library
@@ -495,3 +524,23 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-on-centos-
 
 Wireless configuration on a laptop with Linux: 
 	http://svobodnaplaneta.com/story/4025
+
+
+Learn Processing:
+http://www.learningprocessing.com/about/
+
+POST - Power On Safe Test - The BIOS initializes the hardware (including keyboard, mouse and screen
+	and tests the main memory. This happens after the power is turned on. Once the POST is completed, 
+	the system control passes from the BIOS to the boot loader.
+
+TO DO - Unix Socets
+
+=======================================================================================================
+
+Sales and WHM Stuff
+
+WHMCS --> Invoices --> Custom Invoice - за създаване на custom invoice
+Едно IP струва 24$ на година. 
+SysAdmin Status --> this order should be revised by a System Administrator
+We shouldn't foreward the client to cPanel. Instead we should add a link to the WebHostFace Knowledge
+Base. 
