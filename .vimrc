@@ -18,6 +18,9 @@ command Qa qall
 command Wa wall
 
 let g:airline#extensions#tabline#enabled = 1 
+let g:airline_enable_branch     = 1 
+let g:airline_enable_syntastic  = 1 
+set laststatus=2
 
 :nmap h <left>
 :nmap j <right>
