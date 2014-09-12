@@ -1,3 +1,4 @@
+ .vimrc                                                                                                                                                           < buffers 
 execute pathogen#infect()
 
 set nu
@@ -28,4 +29,7 @@ set laststatus=2
 :nmap l <up>
 
 :map <F9> :e sudo:/var/www/laravel/
-:colorscheme 256-grayvim
+:colorscheme mustang
+
+" :colorscheme 256-grayvim
+" :colorscheme vexorian
