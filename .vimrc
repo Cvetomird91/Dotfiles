@@ -1,4 +1,3 @@
- .vimrc                                                                                                                                                           < buffers 
 execute pathogen#infect()
 
 set nu
