@@ -29,9 +29,6 @@ set laststatus=2
 :nmap l <down>
 :nmap k <up>
 
-:map <F8> :e /etc/apache2/sites-available/laravel
-:map <F9> :e sudo:/var/www/laravel/
-
 :colorscheme 256-grayvim
 
 augroup gzip
